@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladda</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- ladda -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.6/spin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.6/ladda.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.6/ladda-themeless.min.css">
+</head>
+<body>
+    <button class="btn btn-primary ladda-button mx-2" type="button" data-style="expand-left">expand-left</button>
+    <button class="btn btn-primary ladda-button mx-2" type="button" data-style="expand-right">expand-right</button>
+    <button class="btn btn-primary ladda-button mx-2" type="button" data-style="slide-up">slide-up</button>
+    <button class="btn btn-primary ladda-button mx-2" type="button" data-style="slide-down">slide-down</button>
+    <button class="btn btn-primary ladda-button mx-2" type="button" data-style="zoom-in">zoom-in</button>
+    <button class="btn btn-primary ladda-button mx-2" type="button" data-style="zoom-out">zoom-out</button>
+</body>
+<script>
+    $(function(){
+        $(document).on("click", "button", function(){
+            let l = Ladda.create(this)
+            l.start()
+            setTimeout(()=>{
+                l.stop()
+            },2000)
+        })
+    })
+</script>
+</html>
